@@ -4,10 +4,13 @@ This is a personal portfolio project built with Angular 21, Tailwind CSS, and An
 
 ## Home Page
 <img width="561" height="360" alt="p1" src="https://github.com/user-attachments/assets/81da7721-58ae-4cf5-837b-11526ba9f9f2" />
+
 ## Abouts Page
 <img width="561" height="361" alt="p2" src="https://github.com/user-attachments/assets/6af3b12b-421f-4268-99fa-2c46e341de98" />
+
 ## Key Page
 <img width="560" height="359" alt="p3" src="https://github.com/user-attachments/assets/a0f1c00f-db54-4c59-afb1-b096e584affe" />
+
 ## Contact Page
 <img width="561" height="362" alt="p4" src="https://github.com/user-attachments/assets/9d99328e-5efb-4e8e-b2f6-a6883d850220" />
 
