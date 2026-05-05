@@ -61,7 +61,7 @@ export interface LanguageLabels {
   providedIn: 'root'
 })
 export class LanguageService {
-  readonly language = signal<LanguageCode>('ua');
+  readonly language = signal<LanguageCode>('en');
 
   readonly labels: Record<LanguageCode, LanguageLabels> = {
     ua: {
