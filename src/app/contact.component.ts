@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,7 +12,7 @@ import { LanguageService } from './language.service';
 @Component({
   standalone: true,
   selector: 'app-contact',
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ScrollRevealDirective],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ScrollRevealDirective],
   template: `
     <section appScrollReveal class="px-4 py-5 sm:px-2">
      <div class="mx-auto grid max-w-6xl gap-8 grid-cols-1">
@@ -78,7 +79,7 @@ import { LanguageService } from './language.service';
                   <img src="whatsUpp.png" alt="WhatsApp" class="w-10 h-10 mr-2" />
                   WhatsApp
                 </a>
-                <a href="https://www.canva.com/design/DAGDEsC_duU/LBZqW6l-gb72UaEX3kpp4g/edit" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-600/30 transition hover:bg-cyan-500">
+                <a routerLink="/resume" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-600/30 transition hover:bg-cyan-500">
                   <img src="resume.png" alt="Resume" class="w-10 h-10 mr-2" />
                   Resume
                 </a>
