@@ -3,7 +3,7 @@
 This is a personal portfolio project built with Angular 21, Tailwind CSS, and Angular Material. The app features an adaptive header, multi-language support (Ukrainian / English), pages for `Home`, `Projects`, `About`, and `Contact`, a scrolling tech carousel and an interactive project filter.
 
 ## Home Page
-<img width="561" height="360" alt="p1" src="https://github.com/user-attachments/assets/81da7721-58ae-4cf5-837b-11526ba9f9f2" />
+<img width="692" height="357" alt="image" src="https://github.com/user-attachments/assets/b3fc0211-de3c-42a0-9b66-b32a2c8294e4" />
 
 ## Abouts Page
 <img width="561" height="361" alt="p2" src="https://github.com/user-attachments/assets/6af3b12b-421f-4268-99fa-2c46e341de98" />
