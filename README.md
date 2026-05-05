@@ -29,7 +29,6 @@ This is a personal portfolio project built with Angular 21, Tailwind CSS, and An
 - Angular Material
 - TypeScript
 - RxJS
-- npm
 
 ## Run locally
 
@@ -40,38 +39,3 @@ npm run start
 
 Open your browser at `http://localhost:4200`.
 
-## Build
-
-```bash
-npm run build
-```
-
-The production output is written to `dist/portfolio`.
-
-## Contribution
-
-Contributions are welcome. If you want to propose improvements or add new features, please create an issue or submit a pull request with a clear description of the change.
-
-### How to contribute
-
-1. Fork the repository.
-2. Create a new branch for your feature or fix.
-3. Make changes and test them locally.
-4. Submit a pull request with a summary of your updates.
-
-## Deployment
-
-To deploy the application, build the production bundle and serve the contents of `dist/portfolio` using a static web server or a hosting platform.
-
-```bash
-npm run build
-```
-
-Then deploy the files from `dist/portfolio` to your chosen hosting provider.
-
-Popular deployment options:
-
-- Vercel
-- Netlify
-- Firebase Hosting
-- GitHub Pages
