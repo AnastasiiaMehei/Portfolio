@@ -44,3 +44,73 @@
 <main class="px-4 py-5 sm:px-2">
   <router-outlet></router-outlet>
 </main>
+
+<footer class="mt-16 border-t border-slate-200 bg-gradient-to-b from-slate-50 to-slate-100">
+  <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <!-- Contact Info -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-slate-900">{{ labels[language()].contact }}</h3>
+        <div class="space-y-2 text-sm text-slate-600">
+          <p>📧 anastasiamegei@ukr.net</p>
+          <p>📱 +380961914540</p>
+          <p>📍 Kyiv, Ukraine</p>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-slate-900">Connect</h3>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://github.com/AnastasiiaMehei" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/30 transition hover:bg-slate-800 bg-slate-900">
+            <img src="gitHub.png" alt="GitHub" class="w-8 h-8 mr-2" />
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/anastasiia-zlahodukh/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-500 bg-blue-600">
+            <img src="linkdin.png" alt="LinkedIn" class="w-8 h-8 mr-2" />
+            LinkedIn
+          </a>
+          <a href="https://t.me/anastasiamegei" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:bg-blue-400 bg-blue-500">
+            <img src="telegram.png" alt="Telegram" class="w-8 h-8 mr-2" />
+            Telegram
+          </a>
+          <a href="viber://chat?number=+380961914540" class="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-600/30 transition hover:bg-purple-500 bg-purple-600">
+            <img src="viber.png" alt="Viber" class="w-8 h-8 mr-2" />
+            Viber
+          </a>
+          <!-- <a href="https://wa.me/380961914540" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-green-600/30 transition hover:bg-green-500 bg-green-600">
+            <img src="whatsUpp.png" alt="WhatsApp" class="w-8 h-8 mr-2" />
+            WhatsApp
+          </a> -->
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-slate-900">Tech Stack</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="rounded-full bg-cyan-100 px-3 py-1 text-xs font-medium text-cyan-800">Node.js, Express.js</span>
+          <span class="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-800">Mongo DB</span>
+          <span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">React, React Native</span>
+          <span class="rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-800">Angular, Vue</span>
+          <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-800">Remix</span>
+          <span class="rounded-full bg-red-100 px-3 py-1 text-xs font-medium text-red-800">Redux</span>
+          <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-800">Next.js</span>
+          <span class="rounded-full bg-teal-100 px-3 py-1 text-xs font-medium text-teal-800">TypeScript</span>
+          <span class="rounded-full bg-sky-100 px-3 py-1 text-xs font-medium text-sky-800">Tailwind</span>
+          <span class="rounded-full bg-violet-100 px-3 py-1 text-xs font-medium text-violet-800">MUI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-8 border-t border-slate-200 pt-6 text-center">
+      <p class="text-sm text-slate-600">
+        © 2026 Anastasiia Zlahodukh — Built with ❤️ using Angular & Tailwind
+      </p>
+      <p class="mt-2 text-xs text-slate-500">
+        Full Stack Developer • MERN Stack • React • TypeScript • Node.js
+      </p>
+    </div>
+  </div>
+</footer>
