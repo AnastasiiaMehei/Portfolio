@@ -1,0 +1,93 @@
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* padding: 2rem 0; */
+  margin-bottom: 2rem;
+
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  padding: 0 1rem;
+  animation: carouselScroll 35s linear infinite;
+  width: fit-content;
+  will-change: transform;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes carouselScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  min-width: 140px;
+}
+
+.tech-icon-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: url('/cursor.png'), pointer;
+  height: 140px;
+}
+
+.tech-icon-wrapper:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.tech-icon {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.tech-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a202c;
+  text-align: center;
+  line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+  .carousel-item {
+    min-width: 110px;
+  }
+  .tech-icon-wrapper {
+    height: 110px;
+    padding: 0.75rem;
+  }
+  .tech-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .tech-label {
+    font-size: 0.75rem;
+  }
+}

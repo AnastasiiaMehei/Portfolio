@@ -1,0 +1,46 @@
+<div *ngIf="showLoader" class="app-loader fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 backdrop-blur-sm">
+  <div class="loader-card rounded-[2rem] p-4 text-center">
+    <div class="mx-auto mb-6 flex h-44 w-44 items-center justify-center rounded-full ">
+      <img src="/loader.png" alt="Loading" class="loader-image" />
+    </div>
+ 
+  </div>
+</div>
+<header class="sticky top-0 z-50 border-b border-[#4a524c]/70 bg-[#4a524c] backdrop-blur-md shadow-black/5 shadow-sm">
+  <mat-toolbar class="flex flex-wrap items-center gap-3 px-4 py-3 sm:px-2 bg-transparent" style="background: transparent;">
+    <div class="flex items-center gap-3">
+      <a routerLink="/" class="h-14 w-16 overflow-hidden rounded-2xl bg-white/10 cursor-pointer">
+        <img src="favicon.png" alt="favicon" class="h-full w-full object-cover" />
+      </a>
+    </div>
+
+    <nav class="hidden flex-1 items-center gap-6 sm:flex sm:px-2">
+      <a routerLink="/" routerLinkActive="header-link--active" [routerLinkActiveOptions]="{ exact: true }" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].home }}</a>
+      <a routerLink="/projects" routerLinkActive="header-link--active" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].projects }}</a>
+      <a routerLink="/about" routerLinkActive="header-link--active" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].about }}</a>
+      <a routerLink="/contact" routerLinkActive="header-link--active" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].contact }}</a>
+    </nav>
+
+    <div class="ml-auto flex items-center">
+      <div class="language-switch">
+  <input
+    id="language_toggle"
+    type="checkbox"
+    class="language-switch__input hidden"
+    [checked]="language() === 'en'"
+    (change)="toggleLanguage()"
+  />
+  <label for="language_toggle" class="language-switch__control">
+    <span class="language-switch__thumb">
+      {{ language() === 'ua' ? 'UA' : 'EN' }}
+    </span>
+  </label>
+</div>
+
+    </div>
+  </mat-toolbar>
+</header>
+
+<main class="px-4 py-5 sm:px-2">
+  <router-outlet></router-outlet>
+</main>
