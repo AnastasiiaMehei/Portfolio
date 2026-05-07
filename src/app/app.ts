@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from './language.service';
+import { ToastContainerComponent } from './toast-container.component';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, MatToolbarModule, MatIconModule, MatButtonModule],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, MatToolbarModule, MatIconModule, MatButtonModule, MatTooltipModule, ToastContainerComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

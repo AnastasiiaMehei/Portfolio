@@ -6,14 +6,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
 import { LanguageService } from './language.service';
 import { ContactService, ContactMessage } from './contact.service';
+import { ToastService } from './toast.service';
 
 @Component({
   standalone: true,
   selector: 'app-contact',
-  imports: [CommonModule, RouterLink, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, ScrollRevealDirective],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTooltipModule, ScrollRevealDirective],
   template: `
     <section appScrollReveal class="px-4 py-5 sm:px-2">
      <div class="mx-auto grid max-w-6xl gap-8 grid-cols-1">
@@ -50,7 +52,7 @@ import { ContactService, ContactMessage } from './contact.service';
               </p>
             </mat-form-field>
 
-            <button mat-raised-button class="inline-flex items-center justify-center rounded-full bg-cyan-600 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-500 disabled:cursor-not-allowed disabled:opacity-60" [disabled]="contactForm.invalid || isSubmitting">
+            <button mat-raised-button matTooltip="{{ labels[language()].contactFormSubmit }}" [matTooltipDisabled]="contactForm.invalid" class="inline-flex items-center justify-center rounded-full bg-cyan-600 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-500 disabled:cursor-not-allowed disabled:opacity-60" [disabled]="contactForm.invalid || isSubmitting">
               <span *ngIf="isSubmitting" class="inline-flex items-center">
                 <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-slate-950" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -71,27 +73,27 @@ import { ContactService, ContactMessage } from './contact.service';
           <div class="mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-black/10 p-8 shadow-xl shadow-black/10 sm:p-4">
             <div class="space-y-4">
               <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a href="https://github.com/AnastasiiaMehei" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/30 transition hover:bg-slate-800">
+                <a href="https://github.com/AnastasiiaMehei" target="_blank" rel="noopener noreferrer" matTooltip="Visit GitHub" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/30 transition hover:bg-slate-800">
                   <img src="gitHub.png" alt="GitHub" class="w-10 h-10 mr-2" />
                   GitHub Profile
                 </a>
-                <a href="https://www.linkedin.com/in/anastasiia-zlahodukh/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-500">
+                <a href="https://www.linkedin.com/in/anastasiia-zlahodukh/" target="_blank" rel="noopener noreferrer" matTooltip="Visit LinkedIn" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-500">
                   <img src="linkdin.png" alt="LinkedIn" class="w-10 h-10 mr-2" />
                   LinkedIn
                 </a>
-                <a href="https://t.me/anastasiamegei" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:bg-blue-400">
+                <a href="https://t.me/anastasiamegei" target="_blank" rel="noopener noreferrer" matTooltip="Open Telegram" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:bg-blue-400">
                   <img src="telegram.png" alt="Telegram" class="w-10 h-10 mr-2" />
                   Telegram
                 </a>
-                <a href="viber://chat?number=+380961914540" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-600/30 transition hover:bg-purple-500">
+                <a href="viber://chat?number=+380961914540" matTooltip="Open Viber" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-600/30 transition hover:bg-purple-500">
                   <img src="viber.png" alt="Viber" class="w-10 h-10 mr-2" />
                   Viber
                 </a>
-                <a href="https://wa.me/380961914540" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-green-600/30 transition hover:bg-green-500">
+                <a href="https://wa.me/380961914540" target="_blank" rel="noopener noreferrer" matTooltip="Open WhatsApp" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-green-600/30 transition hover:bg-green-500">
                   <img src="whatsUpp.png" alt="WhatsApp" class="w-10 h-10 mr-2" />
                   WhatsApp
                 </a>
-                <a routerLink="/resume" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-600/30 transition hover:bg-cyan-500">
+                <a routerLink="/resume" matTooltip="View Resume" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-600/30 transition hover:bg-cyan-500">
                   <img src="resume.png" alt="Resume" class="w-10 h-10 mr-2" />
                   Resume
                 </a>
@@ -112,6 +114,7 @@ export class ContactComponent {
   protected readonly language = this.languageService.language;
   protected readonly labels = this.languageService.labels;
   private readonly contactService = inject(ContactService);
+  private readonly toastService = inject(ToastService);
 
   protected isSubmitting = false;
   protected submitMessage = '';
@@ -155,15 +158,19 @@ export class ContactComponent {
 
     try {
       const response = await this.contactService.sendMessage(formData);
-      this.submitMessage = this.language() === 'en'
+      const successMessage = this.language() === 'en'
         ? 'Message sent successfully!'
         : 'Повідомлення надіслано успішно!';
+      this.submitMessage = successMessage;
+      this.toastService.success(successMessage);
       this.contactForm.reset();
     } catch (error: any) {
       const errorMsg = error?.message || 'Unknown error';
-      this.submitMessage = this.language() === 'en'
+      const errorMessage = this.language() === 'en'
         ? `Failed to send message: ${errorMsg}`
         : `Не вдалося надіслати повідомлення: ${errorMsg}`;
+      this.submitMessage = errorMessage;
+      this.toastService.error(errorMessage);
       console.error('Error sending message:', error);
     } finally {
       this.isSubmitting = false;

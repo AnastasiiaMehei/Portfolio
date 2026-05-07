@@ -1,5 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from './language.service';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
 
@@ -29,7 +30,7 @@ interface GitHubRepo {
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatTooltipModule],
   selector: 'app-projects',
   template: `
     <section class="px-4 py-5 sm:px-2">
@@ -45,6 +46,7 @@ interface GitHubRepo {
                 <button
                   type="button"
                   class="filter-chip"
+                  matTooltip="View all projects"
                   [class.active]="selectedTechnology().has('All')"
                   (click)="setTechnologyFilter('All')"
                 >
@@ -54,6 +56,7 @@ interface GitHubRepo {
                   *ngFor="let tech of technologies()"
                   type="button"
                   class="filter-chip"
+                  [matTooltip]="'Filter by ' + tech"
                   [class.active]="selectedTechnology().has(tech)"
                   (click)="setTechnologyFilter(tech)"
                 >

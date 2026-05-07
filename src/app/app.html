@@ -6,6 +6,7 @@
  
   </div>
 </div>
+<app-toast-container></app-toast-container>
 <header class="sticky top-0 z-50 border-b border-[#4a524c]/70 bg-[#4a524c] backdrop-blur-md shadow-black/5 shadow-sm">
   <mat-toolbar class="flex flex-wrap items-center gap-3 px-4 py-3 sm:px-2 bg-transparent" style="background: transparent;">
     <div class="flex items-center gap-3">
@@ -15,14 +16,14 @@
     </div>
 
     <nav class="hidden flex-1 items-center gap-6 sm:flex sm:px-2">
-      <a routerLink="/" routerLinkActive="header-link--active" [routerLinkActiveOptions]="{ exact: true }" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].home }}</a>
-      <a routerLink="/projects" routerLinkActive="header-link--active" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].projects }}</a>
-      <a routerLink="/about" routerLinkActive="header-link--active" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].about }}</a>
-      <a routerLink="/contact" routerLinkActive="header-link--active" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].contact }}</a>
+      <a routerLink="/" routerLinkActive="header-link--active" [routerLinkActiveOptions]="{ exact: true }" matTooltip="Go to Home" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].home }}</a>
+      <a routerLink="/projects" routerLinkActive="header-link--active" matTooltip="View Projects" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].projects }}</a>
+      <a routerLink="/about" routerLinkActive="header-link--active" matTooltip="Learn About Me" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].about }}</a>
+      <a routerLink="/contact" routerLinkActive="header-link--active" matTooltip="Contact Me" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].contact }}</a>
     </nav>
 
     <div class="ml-auto flex items-center">
-      <div class="language-switch">
+      <div class="language-switch" matTooltip="Toggle Language">
   <input
     id="language_toggle"
     type="checkbox"
