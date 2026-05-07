@@ -144,10 +144,14 @@ export class ContactComponent {
     this.submitMessage = '';
 
     const formData: ContactMessage = {
-      name: this.contactForm.value.name || '',
-      email: this.contactForm.value.email || '',
-      message: this.contactForm.value.message || ''
+      name: String(this.contactForm.get('name')?.value || '').trim(),
+      email: String(this.contactForm.get('email')?.value || '').trim(),
+      message: String(this.contactForm.get('message')?.value || '').trim()
     };
+
+    console.log('Current hostname:', location.hostname);
+    console.log('Form data to send:', formData);
+    console.log('Message field value:', this.contactForm.get('message')?.value);
 
     try {
       const response = await this.contactService.sendMessage(formData);
