@@ -26,6 +26,7 @@ This is a personal portfolio project built with Angular 21, Tailwind CSS, and An
 - Language toggle supporting Ukrainian and English
 - `Projects` page with dynamic GitHub repository loading
 - Multi-select technology filter for projects
+- Contact form with backend integration (NestJS + PostgreSQL)
 - Responsive layout built with Tailwind CSS
 - Angular Material components for a polished UI
 
@@ -37,22 +38,124 @@ This is a personal portfolio project built with Angular 21, Tailwind CSS, and An
 - `src/app/home.component.html` — home page with tech carousel and social buttons
 - `src/app/projects.component.ts` — projects page with GitHub repository filtering
 - `src/app/about.component.ts` — about page
-- `src/app/contact.component.ts` — contact page
+- `src/app/contact.component.ts` — contact page with form submission
+- `src/app/contact.service.ts` — service for sending contact messages to backend
+- `src/app/resume.component.ts` — resume page
 
 ## Technologies
 
-- Angular 21
-- Tailwind CSS
-- Angular Material
-- TypeScript
-- RxJS
+- **Frontend**: Angular 21, Tailwind CSS, Angular Material, TypeScript, RxJS
+- **Backend**: NestJS, Prisma, PostgreSQL, Docker
 
 ## Run locally
 
+### Frontend
 ```bash
 npm install
 npm run start
 ```
-
 Open your browser at `http://localhost:4200`.
+
+### Backend
+Make sure you have Docker installed and running.
+
+```bash
+# Clone the backend repository
+git clone <your-backend-repo-url>
+cd <backend-directory>
+
+# Start the backend with Docker
+docker-compose up -d
+
+# Or run locally (if you have Node.js and PostgreSQL installed)
+npm install
+npm run start:dev
+```
+
+The backend will be available at `http://localhost:3000`.
+
+### Contact Form
+The contact form sends POST requests to `http://localhost:3000/messages` with the following structure:
+```json
+{
+  "name": "string",
+  "email": "string",
+  "message": "string"
+}
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Deployment
+
+### Frontend Deployment Options
+
+#### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Vercel will automatically detect Angular and build the project
+3. Set environment variables if needed
+
+#### Netlify
+1. Connect your GitHub repository to Netlify
+2. Set build command: `npm run build`
+3. Set publish directory: `dist/portfolio`
+
+#### Firebase
+```bash
+npm install -g firebase-tools
+firebase login
+firebase init
+firebase deploy
+```
+
+#### GitHub Pages
+```bash
+npm install -g angular-cli-ghpages
+ng build --configuration production --base-href "https://yourusername.github.io/repository-name/"
+npx angular-cli-ghpages --dir=dist/portfolio
+```
+
+### Backend Deployment
+
+#### Railway
+1. Connect your backend repository to Railway
+2. Railway will automatically detect NestJS and set up the database
+3. Set environment variables for database connection
+
+#### Render
+1. Connect your backend repository to Render
+2. Set build command: `npm install`
+3. Set start command: `npm run start:prod`
+4. Add PostgreSQL database instance
+
+#### Heroku
+```bash
+heroku create your-app-name
+heroku addons:create heroku-postgresql:hobby-dev
+git push heroku main
+```
+
+## Contribution
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow Angular style guide
+- Use TypeScript strict mode
+- Write meaningful commit messages
+- Test your changes before submitting PR
+- Update documentation if needed
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
 

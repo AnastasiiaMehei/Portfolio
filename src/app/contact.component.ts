@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
 import { LanguageService } from './language.service';
+import { ContactService, ContactMessage } from './contact.service';
 
 @Component({
   standalone: true,
@@ -49,9 +50,20 @@ import { LanguageService } from './language.service';
               </p>
             </mat-form-field>
 
-            <button mat-raised-button class="inline-flex items-center justify-center rounded-full bg-cyan-600 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-500 disabled:cursor-not-allowed disabled:opacity-60" [disabled]="contactForm.invalid">
-              {{ labels[language()].contactFormSubmit }}
+            <button mat-raised-button class="inline-flex items-center justify-center rounded-full bg-cyan-600 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-500 disabled:cursor-not-allowed disabled:opacity-60" [disabled]="contactForm.invalid || isSubmitting">
+              <span *ngIf="isSubmitting" class="inline-flex items-center">
+                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-slate-950" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                {{ language() === 'en' ? 'Sending...' : 'Надсилання...' }}
+              </span>
+              <span *ngIf="!isSubmitting">{{ labels[language()].contactFormSubmit }}</span>
             </button>
+
+            <p *ngIf="submitMessage" class="mt-4 text-sm" [class.text-green-600]="submitMessage.includes('successfully')" [class.text-red-600]="!submitMessage.includes('successfully')">
+              {{ submitMessage }}
+            </p>
           </form>
         </div>
 
@@ -99,6 +111,10 @@ export class ContactComponent {
   protected readonly languageService = inject(LanguageService);
   protected readonly language = this.languageService.language;
   protected readonly labels = this.languageService.labels;
+  private readonly contactService = inject(ContactService);
+
+  protected isSubmitting = false;
+  protected submitMessage = '';
 
   protected contactForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -118,13 +134,35 @@ export class ContactComponent {
     return this.contactForm.get('message')!;
   }
 
-  protected submitContact() {
+  protected async submitContact() {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
     }
 
-    console.log('Contact form submitted', this.contactForm.value);
-    this.contactForm.reset();
+    this.isSubmitting = true;
+    this.submitMessage = '';
+
+    const formData: ContactMessage = {
+      name: this.contactForm.value.name || '',
+      email: this.contactForm.value.email || '',
+      message: this.contactForm.value.message || ''
+    };
+
+    try {
+      const response = await this.contactService.sendMessage(formData);
+      this.submitMessage = this.language() === 'en'
+        ? 'Message sent successfully!'
+        : 'Повідомлення надіслано успішно!';
+      this.contactForm.reset();
+    } catch (error: any) {
+      const errorMsg = error?.message || 'Unknown error';
+      this.submitMessage = this.language() === 'en'
+        ? `Failed to send message: ${errorMsg}`
+        : `Не вдалося надіслати повідомлення: ${errorMsg}`;
+      console.error('Error sending message:', error);
+    } finally {
+      this.isSubmitting = false;
+    }
   }
 }
