@@ -13,7 +13,7 @@ export interface ContactMessage {
 })
 export class ContactService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:3000/messages';
+  private readonly apiUrl = 'https://portfolio-be-6hdi.onrender.com/messages';
 
   sendMessage(message: ContactMessage): Observable<any> {
     return this.http.post(this.apiUrl, message).pipe(
