@@ -5,6 +5,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
 import { LanguageService } from './language.service';
+import { AboutComponent } from './about.component';
+import { ContactComponent } from './contact.component';
+import { ProjectsComponent } from './projects.component';
 
 const TECH_STACK = [
   { name: 'Node.js', icon: '/node.png' },
@@ -23,7 +26,7 @@ const TECH_STACK = [
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterLink, MatIconModule, MatTooltipModule, ScrollRevealDirective],
+  imports: [CommonModule, RouterLink, MatIconModule, MatTooltipModule, ScrollRevealDirective, AboutComponent, ContactComponent, ProjectsComponent],
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

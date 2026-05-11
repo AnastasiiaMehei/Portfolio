@@ -58,7 +58,7 @@ interface GitHubRepo {
           <div class="mt-6 space-y-6">
             <div>
               <p class="text-xs uppercase tracking-[0.28em] text-slate-500">{{ labels[language()].technologies }}</p>
-              <div class="mt-4 flex flex-wrap gap-2">
+              <div class="mt-0 flex flex-wrap gap-2">
                 <button
                   type="button"
                   class="filter-chip"
