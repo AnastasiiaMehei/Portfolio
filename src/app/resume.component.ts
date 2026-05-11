@@ -20,7 +20,7 @@ import { AnimatedCardDirective } from './animated-card.directive';
             <div class="mb-8">
               <h2 class="text-2xl font-semibold text-slate-950 mb-4">Summary</h2>
               <p class="text-slate-700">
-                Result-oriented MERN Developer, detail-focused and committed to quality. Passionate about growth and eager to contribute to innovative projects.
+                Result-oriented MERN Developer, detail-focused and committed to quality. Passionate \n about growth  and eager to contribute to innovative projects.
               </p>
             </div>
 
@@ -151,7 +151,7 @@ import { AnimatedCardDirective } from './animated-card.directive';
   styles: []
 })
 export class ResumeComponent {
-  protected readonly resumeText = `Anastasiia Zlahodukh\nFull Stack Developer\n\nSummary\nResult-oriented MERN Developer, detail-focused and committed to quality. Passionate about growth and eager to contribute to innovative projects.\n\nContacts\nPhone: +380961914540\nEmail: anastasiamegei@ukr.net\nLinkedIn: https://www.linkedin.com/in/anastasiia-zlahodukh/\nGitHub: https://github.com/AnastasiiaMehei/\nLocation: Kyiv, Ukraine\n\nTech Skills\nNode.js, Express.js, MongoDB, React, React Native, Angular, Vue, Remix, Redux, Next.js, TypeScript, Tailwind, MUI\n\nWork Experience\n2024 - 2026 FullStack Developer\n- Developing responsive, pixel-perfect UI components using React and TypeScript\n- Integrating front-end components with APIs and third-party libraries\n- Contributing to backend with Node.js (API endpoints, controllers)\n- Collaborating with design and QA teams\n- Promoting best practices in frontend architecture and maintainability\n\nEducation\n2023 - 2024 Fullstack Developer, IT School GoIT\n\nSoft Skills\nAttention to detail, Time management, Teamwork`;
+  protected readonly resumeText = `Anastasiia Zlahodukh\nFull Stack Developer\n\nSummary\nResult-oriented MERN Developer, detail-focused and committed to quality. Passionate \n about growth and eager to contribute to innovative projects.\n\nContacts\nPhone: +380961914540\nEmail: anastasiamegei@ukr.net\nLinkedIn: https://www.linkedin.com/in/anastasiia-zlahodukh/\nGitHub: https://github.com/AnastasiiaMehei/\nLocation: Kyiv, Ukraine\n\nTech Skills\nNode.js, Express.js, MongoDB, React, React Native, Angular, Vue, Remix, Redux, Next.js, \n TypeScript,  Tailwind, MUI\n\nWork Experience\n2024 - 2026 FullStack Developer\n- Developing responsive, pixel-perfect UI components using React and TypeScript\n- Integrating front-end components with APIs and third-party libraries\n- Contributing to backend with Node.js (API endpoints, controllers)\n- Collaborating with design and QA teams\n- Promoting best practices in frontend architecture and maintainability\n\nEducation\n2023 - 2024 Fullstack Developer, IT School GoIT\n\nSoft Skills\nAttention to detail, Time management, Teamwork`;
 
   protected downloadResume(format: 'pdf' | 'doc'): void {
     if (format === 'doc') {
