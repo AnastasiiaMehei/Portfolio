@@ -11,9 +11,25 @@ const TECH_FILTERS = [
   'Vue',
   'Remix',
   'Redux',
-  'Next.js',
   'TypeScript',
-  'MUI'
+  'MUI',
+  'Rxjs',
+  'Tailwind',
+  'Karma-jasmine',
+  'Bootstrap5',
+  'Docker',
+  'Nestjs',
+  'Postgresql',
+  'Prisma',
+  'JavaScript',
+  'Bcrypt',
+  'Cloudinary',
+  'Dotenv',
+  'Jtw',
+  'Axios',
+  'Emotion',
+  'Framer-motion',
+  'Fontsource'
 ];
 
 interface GitHubRepo {
@@ -152,15 +168,7 @@ export class ProjectsComponent {
   });
 
   protected readonly technologies = computed(() => {
-    const found = new Set<string>(TECH_FILTERS.slice(1));
-    this.repos().forEach(repo => {
-      this.getRepoTechs(repo).forEach(tech => {
-        if (!TECH_FILTERS.includes(tech)) {
-          found.add(tech);
-        }
-      });
-    });
-    return Array.from(found);
+    return TECH_FILTERS.slice(1);
   });
 
   constructor() {
@@ -231,6 +239,22 @@ export class ProjectsComponent {
     if (normalized.includes('material') || normalized.includes('mui')) return 'MUI';
     if (normalized.includes('vue')) return 'Vue';
     if (normalized.includes('node')) return 'Node.js';
+    if (normalized.includes('rxjs')) return 'Rxjs';
+    if (normalized.includes('karma') || normalized.includes('jasmine')) return 'Karma-jasmine';
+    if (normalized.includes('bootstrap')) return 'Bootstrap5';
+    if (normalized.includes('docker')) return 'Docker';
+    if (normalized.includes('nestjs')) return 'Nestjs';
+    if (normalized.includes('postgres')) return 'Postgresql';
+    if (normalized.includes('prisma')) return 'Prisma';
+    if (normalized.includes('javascript')) return 'JavaScript';
+    if (normalized.includes('bcrypt')) return 'Bcrypt';
+    if (normalized.includes('cloudinary')) return 'Cloudinary';
+    if (normalized.includes('dotenv')) return 'Dotenv';
+    if (normalized.includes('jwt') || normalized.includes('jtw')) return 'Jtw';
+    if (normalized.includes('axios')) return 'Axios';
+    if (normalized.includes('emotion')) return 'Emotion';
+    if (normalized.includes('framer')) return 'Framer-motion';
+    if (normalized.includes('fontsource')) return 'Fontsource';
     return topic.charAt(0).toUpperCase() + topic.slice(1);
   }
 

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { Router, RouterLinkActive, RouterOutlet, RouterLink, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Event } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,6 +16,7 @@ import { ToastContainerComponent } from './toast-container.component';
 })
 export class App implements OnInit {
   protected showLoader = true;
+  protected showScrollTop = true;
   protected readonly languageService = inject(LanguageService);
   protected readonly language = this.languageService.language;
   protected readonly labels = this.languageService.labels;
@@ -34,5 +35,14 @@ export class App implements OnInit {
     setTimeout(() => {
       this.showLoader = false;
     }, 2000);
+  }
+
+  @HostListener('window:scroll')
+  protected onWindowScroll(): void {
+    this.showScrollTop = window.pageYOffset > 300;
+  }
+
+  protected scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
