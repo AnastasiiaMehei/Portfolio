@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
+import { AnimatedCardDirective } from './animated-card.directive';
 import { LanguageService } from './language.service';
 
 const TECH_STACK = [
@@ -20,7 +21,7 @@ const TECH_STACK = [
 
 @Component({
   standalone: true,
-  imports: [CommonModule, ScrollRevealDirective],
+  imports: [CommonModule, ScrollRevealDirective, AnimatedCardDirective],
   styleUrls: ['./about.component.css'],
   selector: 'app-about',
   template: `

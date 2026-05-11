@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from './language.service';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
+import { AnimatedCardDirective } from './animated-card.directive';
 
 const TECH_FILTERS = [
   'All',
@@ -46,7 +47,7 @@ interface GitHubRepo {
 
 @Component({
   standalone: true,
-  imports: [CommonModule, MatTooltipModule],
+  imports: [CommonModule, MatTooltipModule, ScrollRevealDirective, AnimatedCardDirective],
   selector: 'app-projects',
   template: `
     <section class="px-4 py-5 sm:px-2">

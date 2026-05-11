@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
+import { AnimatedCardDirective } from './animated-card.directive';
 
 @Component({
   standalone: true,
   selector: 'app-resume',
-  imports: [CommonModule, ScrollRevealDirective],
+  imports: [CommonModule, ScrollRevealDirective, AnimatedCardDirective],
   template: `
     <section appScrollReveal class="px-4 py-10 sm:px-6">
       <div class="mx-auto max-w-6xl">

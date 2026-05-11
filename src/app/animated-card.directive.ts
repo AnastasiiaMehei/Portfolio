@@ -1,24 +1,25 @@
-import { AfterViewInit, Directive, ElementRef, OnDestroy, Renderer2, inject } from '@angular/core';
+import { Directive, ElementRef, OnInit, Renderer2, inject } from '@angular/core';
 import { AnimationService } from './animation.service';
 import { Subscription } from 'rxjs';
 
 @Directive({
   standalone: true,
-  selector: '[appScrollReveal]'
+  selector: '.animated-card'
 })
-export class ScrollRevealDirective implements AfterViewInit, OnDestroy {
+export class AnimatedCardDirective implements OnInit {
   private animationService = inject(AnimationService);
   private subscription?: Subscription;
 
   constructor(private element: ElementRef<HTMLElement>, private renderer: Renderer2) {}
 
-  ngAfterViewInit() {
-    this.renderer.addClass(this.element.nativeElement, 'scroll-reveal');
+  ngOnInit() {
+    // The class is already applied in HTML, but ensure it's there
+    this.renderer.addClass(this.element.nativeElement, 'animated-card');
 
     this.subscription = this.animationService.observeElement(this.element).subscribe(isVisible => {
       if (isVisible) {
-        this.renderer.addClass(this.element.nativeElement, 'reveal-visible');
-        this.subscription?.unsubscribe(); // Stop observing once revealed
+        this.renderer.addClass(this.element.nativeElement, 'animated-card--visible');
+        this.subscription?.unsubscribe();
       }
     });
   }

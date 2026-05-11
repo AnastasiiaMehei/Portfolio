@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from './language.service';
 import { ToastContainerComponent } from './toast-container.component';
+import { AnimationService } from './animation.service';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ export class App implements OnInit {
   protected readonly labels = this.languageService.labels;
   protected toggleLanguage = () => this.languageService.toggleLanguage();
   private readonly router = inject(Router);
+  private readonly animationService = inject(AnimationService);
 
   ngOnInit() {
     this.router.events.subscribe((event: Event) => {
@@ -29,6 +31,8 @@ export class App implements OnInit {
         this.showLoader = true;
       } else if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) {
         this.showLoader = false;
+        // Trigger animations on page load
+        setTimeout(() => this.triggerAnimations(), 100);
       }
     });
 
@@ -44,5 +48,9 @@ export class App implements OnInit {
 
   protected scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  protected triggerAnimations(): void {
+    this.animationService.triggerAllAnimations();
   }
 }

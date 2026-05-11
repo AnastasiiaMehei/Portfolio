@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
+import { AnimatedCardDirective } from './animated-card.directive';
 import { LanguageService } from './language.service';
 import { AboutComponent } from './about.component';
 import { ContactComponent } from './contact.component';
@@ -26,7 +27,7 @@ const TECH_STACK = [
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterLink, MatIconModule, MatTooltipModule, ScrollRevealDirective, AboutComponent, ContactComponent, ProjectsComponent],
+  imports: [CommonModule, RouterLink, MatIconModule, MatTooltipModule, ScrollRevealDirective, AnimatedCardDirective, AboutComponent, ContactComponent, ProjectsComponent],
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

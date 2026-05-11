@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
+import { AnimatedCardDirective } from './animated-card.directive';
 import { LanguageService } from './language.service';
 import { ContactService, ContactMessage } from './contact.service';
 import { ToastService } from './toast.service';
@@ -15,7 +16,7 @@ import { ToastService } from './toast.service';
 @Component({
   standalone: true,
   selector: 'app-contact',
-  imports: [CommonModule, RouterLink, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTooltipModule, ScrollRevealDirective],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTooltipModule, ScrollRevealDirective, AnimatedCardDirective],
   template: `
     <section appScrollReveal class="px-4 py-5 sm:px-2">
      <div class="mx-auto grid max-w-6xl gap-8 grid-cols-1">
