@@ -67,7 +67,20 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
               <p><a href="https://www.coursera.org/account/accomplishments/verify/WWPFUV66WDTI" target="_blank" class="text-cyan-600 hover:underline">View certificate</a></p>
             </div>
           </article>
-
+  <article appScrollReveal class="animated-card rounded-[2rem] border border-black/10 p-8 shadow-xl shadow-black/10" style="animation-delay: 0.30s;">
+            <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 class="text-2xl font-semibold text-slate-950">WordPress Website Development Course</h2>
+                <p class="mt-2 text-sm text-slate-600">LearnKartS</p>
+              </div>
+              <img src="/Copilot_wordpress.png" alt="WordPress Website Development certification" class="h-32 w-32 rounded-3xl p-3 object-contain" />
+            </div>
+            <div class="mt-6 space-y-2 text-slate-700">
+              <p><span class="font-semibold">Issued:</span> May 2026</p>
+              <p><span class="font-semibold">Credential ID:</span> X3J0L7WKY5CR</p>
+              <p><a href="https://www.coursera.org/account/accomplishments/verify/X3J0L7WKY5CR" target="_blank" class="text-cyan-600 hover:underline">View certificate</a></p>
+            </div>
+          </article>
 
                     <article appScrollReveal class="animated-card rounded-[2rem] border border-black/10 p-8 shadow-xl shadow-black/10" style="animation-delay: 0.05s;">
             <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
@@ -83,6 +96,8 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
               <p><a href="https://www.coursera.org/account/accomplishments/verify/D3Z58VREYVV7" target="_blank" class="text-cyan-600 hover:underline">View certificate</a></p>
             </div>
           </article>
+
+        
         </div>
       </div>
     </section>
