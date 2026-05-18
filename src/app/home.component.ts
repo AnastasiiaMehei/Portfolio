@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
@@ -9,6 +8,7 @@ import { LanguageService } from './language.service';
 import { AboutComponent } from './about.component';
 import { ContactComponent } from './contact.component';
 import { ProjectsComponent } from './projects.component';
+import { CertificationsComponent } from './certifications.component';
 
 const TECH_STACK = [
   { name: 'Node.js', icon: '/node.png' },
@@ -27,7 +27,7 @@ const TECH_STACK = [
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterLink, MatIconModule, MatTooltipModule, ScrollRevealDirective, AnimatedCardDirective, AboutComponent, ContactComponent, ProjectsComponent],
+  imports: [CommonModule, MatIconModule, MatTooltipModule, ScrollRevealDirective, AnimatedCardDirective, AboutComponent, ContactComponent, CertificationsComponent, ProjectsComponent],
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

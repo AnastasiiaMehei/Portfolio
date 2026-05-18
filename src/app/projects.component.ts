@@ -97,7 +97,9 @@ interface GitHubRepo {
           </div>
 
           <div class="grid gap-6 md:grid-cols-2">
-            <article *ngFor="let repo of filteredRepos()" class="repo-card rounded-[2rem] border border-black/10 p-6 shadow-xl shadow-black/10 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+            <article *ngFor="let repo of filteredRepos(); let i = index" class="repo-card animated-card rounded-[2rem] border border-black/10 p-6 shadow-xl shadow-black/10 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+              appScrollReveal
+              [style.animationDelay]="(i * 0.08) + 's'"
               (click)="openRepo(repo.html_url)"
             >
               <div class="flex items-start justify-between gap-4">

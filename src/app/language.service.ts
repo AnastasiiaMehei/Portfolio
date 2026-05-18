@@ -6,6 +6,7 @@ export interface LanguageLabels {
   home: string;
   about: string;
   projects: string;
+  certifications: string;
   contact: string;
   heroTitle: string;
   heroText: string;
@@ -68,6 +69,7 @@ export class LanguageService {
       home: 'Головна',
       about: 'Про мене',
       projects: 'Проєкти',
+      certifications: 'Сертифікації',
       contact: 'Зв\'язатися',
       heroTitle: 'Стильний header для твого портфоліо',
       heroText: 'Це простий адаптивний верхній блок із кнопками навігації, що працює з Tailwind і Angular Material.',
@@ -122,6 +124,7 @@ export class LanguageService {
       home: 'Home',
       about: 'About me',
       projects: 'Projects',
+      certifications: 'Certifications',
       contact: 'Contact me',
       heroTitle: 'A stylish header for your portfolio',
       heroText: 'This is a simple responsive top section with navigation buttons built using Tailwind and Angular Material.',
