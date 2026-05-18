@@ -82,6 +82,22 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
             </div>
           </article>
 
+          <article appScrollReveal class="animated-card rounded-[2rem] border border-black/10 p-8 shadow-xl shadow-black/10" style="animation-delay: 0.36s;">
+            <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 class="text-2xl font-semibold text-slate-950">Developing Front-End Apps with React</h2>
+                <p class="mt-2 text-sm text-slate-600">IBM</p>
+              </div>
+              <img src="/react.png" alt="React certification" class="h-32 w-32 rounded-3xl p-3 object-contain" />
+            </div>
+            <div class="mt-6 space-y-2 text-slate-700">
+              <p><span class="font-semibold">Issued:</span> May 2026</p>
+              <p><span class="font-semibold">Credential ID:</span> 0KPTPWB4AV88</p>
+              <p><span class="font-semibold">Skills:</span> React.js, JavaScript, JavaScript eXtension (JSX), Vite tool, Redux.js, CSS3, React Hooks</p>
+              <p><a href="https://www.coursera.org/account/accomplishments/verify/0KPTPWB4AV88" target="_blank" class="text-cyan-600 hover:underline">View certificate</a></p>
+            </div>
+          </article>
+
                     <article appScrollReveal class="animated-card rounded-[2rem] border border-black/10 p-8 shadow-xl shadow-black/10" style="animation-delay: 0.05s;">
             <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
