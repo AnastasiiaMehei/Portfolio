@@ -21,11 +21,6 @@ export class ContactService {
 
   async sendMessage(message: ContactMessage): Promise<any> {
     try {
-      console.log('Current hostname:', location.hostname);
-      console.log('Is development:', this.isDevelopment);
-      console.log('API URL:', this.apiUrl);
-      console.log('Sending message:', message);
-
       const response = await fetch(this.apiUrl, {
         method: 'POST',
         headers: {
@@ -34,9 +29,7 @@ export class ContactService {
         body: JSON.stringify(message)
       });
 
-      console.log('Response status:', response.status);
       const responseData = await response.json();
-      console.log('Response data:', responseData);
 
       if (!response.ok) {
         const errorMessage = responseData?.message || `HTTP error! status: ${response.status}`;
@@ -45,7 +38,6 @@ export class ContactService {
 
       return responseData;
     } catch (error) {
-      console.error('Error sending contact message:', error);
       throw error;
     }
   }
