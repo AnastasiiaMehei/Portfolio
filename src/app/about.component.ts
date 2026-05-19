@@ -27,7 +27,7 @@ const TECH_STACK = [
   template: `
     <section appScrollReveal class="px-4 py-5 sm:px-2">
       <div class="mx-auto max-w-5xl space-y-8">
-        <!-- About Me Card -->
+     
         <div class="animated-card rounded-[2rem] border border-black/10 p-4 shadow-xl shadow-black/10 sm:p-4">
           <h2 class="text-3xl font-semibold text-[#151815] sm:text-4xl">{{ labels[language()].aboutMe }}</h2>
           <p class="mt-4 whitespace-pre-wrap leading-8 text-[#333]">{{ labels[language()].aboutMeDescription }}</p>

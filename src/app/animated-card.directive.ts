@@ -13,7 +13,6 @@ export class AnimatedCardDirective implements OnInit {
   constructor(private element: ElementRef<HTMLElement>, private renderer: Renderer2) {}
 
   ngOnInit() {
-    // The class is already applied in HTML, but ensure it's there
     this.renderer.addClass(this.element.nativeElement, 'animated-card');
 
     this.subscription = this.animationService.observeElement(this.element).subscribe(isVisible => {

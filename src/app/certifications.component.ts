@@ -18,10 +18,9 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
           <section>
             <h3 class="text-xl font-semibold text-slate-800">Full-Stack Development</h3>
             <div class="mt-4 grid gap-6 sm:grid-cols-2">
-              <!-- GoIT - prioritized -->
               <article appScrollReveal class="group rounded-2xl border border-black/5    p-8 shadow-lg transform transition hover:scale-102 hover:shadow-2xl" style="animation-delay: 0.10s;">
                 <div class="flex items-center gap-4">
-                  <img src="/Copilot_goit.png" alt="GoIT" class="h-20 w-20 rounded-xl object-contain" />
+                  <img src="/Copilot_goit.png" alt="GoIT" class="h-20 w-20 rounded-xl object-contain" decoding="async" loading="lazy">
                   <div>
                     <h4 class="text-2xl font-semibold text-slate-950">FULLSTACK Developer — GoIT</h4>
                     <p class="mt-1 text-sm text-slate-600">GoIT — career-focused bootcamp</p>
@@ -41,10 +40,9 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
           <section>
             <h3 class="text-xl font-semibold text-slate-800">Frontend Development</h3>
             <div class="mt-4 grid gap-6 sm:grid-cols-2">
-              <!-- React (prioritized) -->
               <article appScrollReveal class="group rounded-2xl border border-black/5    p-8 shadow-lg transform transition hover:scale-102 hover:shadow-2xl" style="animation-delay: 0.12s;">
                 <div class="flex items-center gap-4">
-                  <img src="/react.png" alt="React" class="h-20 w-20 rounded-xl object-contain" />
+                  <img src="/react.png" alt="React" class="h-20 w-20 rounded-xl object-contain" decoding="async" loading="lazy">
                   <div>
                     <h4 class="text-2xl font-semibold text-slate-950">Developing Front-End Apps with React</h4>
                     <p class="mt-1 text-sm text-slate-600">IBM / Coursera</p>
@@ -59,10 +57,9 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
                 </div>
               </article>
 
-              <!-- Intro HTML/CSS/JS -->
               <article appScrollReveal class="group rounded-2xl border border-black/5    p-8 shadow-lg transform transition hover:scale-102 hover:shadow-2xl" style="animation-delay: 0.14s;">
                 <div class="flex items-center gap-4">
-                  <img src="/Copilot_js.png" alt="HTML/CSS/JS" class="h-20 w-20 rounded-xl object-contain" />
+                  <img src="/Copilot_js.png" alt="HTML/CSS/JS" class="h-20 w-20 rounded-xl object-contain" decoding="async" loading="lazy">
                   <div>
                     <h4 class="text-2xl font-semibold text-slate-950">Introduction to HTML, CSS & JavaScript</h4>
                     <p class="mt-1 text-sm text-slate-600">IBM / Coursera</p>
@@ -82,10 +79,9 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
           <section>
             <h3 class="text-xl font-semibold text-slate-800">Backend Development</h3>
             <div class="mt-4 grid gap-6 sm:grid-cols-2">
-              <!-- Node.js & MongoDB -->
               <article appScrollReveal class="group rounded-2xl border border-black/5    p-8 shadow-lg transform transition hover:scale-102 hover:shadow-2xl" style="animation-delay: 0.16s;">
                 <div class="flex items-center gap-4">
-                  <img src="/Copilot_nodeMongo.png" alt="Node & MongoDB" class="h-20 w-20 rounded-xl object-contain" />
+                  <img src="/Copilot_nodeMongo.png" alt="Node & MongoDB" class="h-20 w-20 rounded-xl object-contain" decoding="async" loading="lazy">
                   <div>
                     <h4 class="text-2xl font-semibold text-slate-950">Node.js & MongoDB: Back-end Database Apps</h4>
                     <p class="mt-1 text-sm text-slate-600">IBM / Coursera</p>
@@ -100,10 +96,9 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
                 </div>
               </article>
 
-              <!-- Node + Express -->
               <article appScrollReveal class="group rounded-2xl border border-black/5    p-8 shadow-lg transform transition hover:scale-102 hover:shadow-2xl" style="animation-delay: 0.18s;">
                 <div class="flex items-center gap-4">
-                  <img src="/Copilot_nodeExpress.png" alt="Node Express" class="h-20 w-20 rounded-xl object-contain" />
+                  <img src="/Copilot_nodeExpress.png" alt="Node Express" class="h-20 w-20 rounded-xl object-contain" decoding="async" loading="lazy">
                   <div>
                     <h4 class="text-2xl font-semibold text-slate-950">Developing Back-End Apps with Node.js & Express</h4>
                     <p class="mt-1 text-sm text-slate-600">IBM / Coursera</p>
@@ -123,10 +118,9 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
           <section>
             <h3 class="text-xl font-semibold text-slate-800">Additional / Professional Development</h3>
             <div class="mt-4 grid gap-6 sm:grid-cols-2">
-              <!-- WordPress -->
               <article appScrollReveal class="group rounded-2xl border border-black/5    p-8 shadow-md transform transition hover:scale-101 hover:shadow-lg" style="animation-delay: 0.20s;">
                 <div class="flex items-center gap-4">
-                  <img src="/Copilot_wordpress.png" alt="WordPress" class="h-20 w-20 rounded-xl object-contain" />
+                  <img src="/Copilot_wordpress.png" alt="WordPress" class="h-20 w-20 rounded-xl object-contain" decoding="async" loading="lazy">
                   <div>
                     <h4 class="text-2xl font-semibold text-slate-950">WordPress Website Development</h4>
                     <p class="mt-1 text-sm text-slate-600">LearnKartS / Coursera</p>
@@ -141,10 +135,9 @@ import { ScrollRevealDirective } from './scroll-reveal.directive';
                 </div>
               </article>
 
-              <!-- Teach English -->
               <article appScrollReveal class="group rounded-2xl border border-black/5    p-8 shadow-md transform transition hover:scale-101 hover:shadow-lg" style="animation-delay: 0.22s;">
                 <div class="flex items-center gap-4">
-                  <img src="/Copilot_english.png" alt="Teach English" class="h-20 w-20 rounded-xl object-contain" />
+                  <img src="/Copilot_english.png" alt="Teach English" class="h-20 w-20 rounded-xl object-contain" decoding="async" loading="lazy">
                   <div>
                     <h4 class="text-2xl font-semibold text-slate-950">Teach English Now! — Foundational Principles</h4>
                     <p class="mt-1 text-sm text-slate-600">Arizona State University / Coursera</p>

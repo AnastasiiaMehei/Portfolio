@@ -136,11 +136,11 @@ import { AnimatedCardDirective } from './animated-card.directive';
               <p class="text-sm text-slate-600">Choose the format you need for your resume.</p>
             </div>
             <button type="button" (click)="downloadResume('pdf')" class="w-full rounded-full bg-cyan-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-500">
-              <span class="material-symbols-outlined mr-2 align-middle">download</span>
+              <span class="mr-2 align-middle">⬇</span>
               Download PDF
             </button>
             <button type="button" (click)="downloadResume('doc')" class="w-full rounded-full bg-slate-700 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-black/20 transition hover:bg-slate-600">
-              <span class="material-symbols-outlined mr-2 align-middle">download</span>
+              <span class="mr-2 align-middle">⬇</span>
               Download Word
             </button>
           </aside>

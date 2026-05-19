@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ScrollRevealDirective } from './scroll-reveal.directive';
 import { AnimatedCardDirective } from './animated-card.directive';
@@ -27,7 +26,7 @@ const TECH_STACK = [
 
 @Component({
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatTooltipModule, ScrollRevealDirective, AnimatedCardDirective, AboutComponent, ContactComponent, CertificationsComponent, ProjectsComponent],
+  imports: [CommonModule, MatTooltipModule, ScrollRevealDirective, AnimatedCardDirective, AboutComponent, ContactComponent, CertificationsComponent, ProjectsComponent],
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

@@ -2,7 +2,6 @@ import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { Router, RouterLinkActive, RouterOutlet, RouterLink, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Event } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from './language.service';
@@ -11,7 +10,7 @@ import { AnimationService } from './animation.service';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, MatToolbarModule, MatIconModule, MatButtonModule, MatTooltipModule, ToastContainerComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, MatToolbarModule, MatButtonModule, MatTooltipModule, ToastContainerComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
@@ -31,14 +30,9 @@ export class App implements OnInit {
         this.showLoader = true;
       } else if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) {
         this.showLoader = false;
-        // Trigger animations on page load
         setTimeout(() => this.triggerAnimations(), 100);
       }
     });
-
-    setTimeout(() => {
-      this.showLoader = false;
-    }, 2000);
   }
 
   @HostListener('window:scroll')

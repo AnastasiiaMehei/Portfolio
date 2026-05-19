@@ -18,7 +18,7 @@ export class ScrollRevealDirective implements AfterViewInit, OnDestroy {
     this.subscription = this.animationService.observeElement(this.element).subscribe(isVisible => {
       if (isVisible) {
         this.renderer.addClass(this.element.nativeElement, 'reveal-visible');
-        this.subscription?.unsubscribe(); // Stop observing once revealed
+        this.subscription?.unsubscribe();
       }
     });
   }
