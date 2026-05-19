@@ -154,10 +154,6 @@ export class ContactComponent {
       message: String(this.contactForm.get('message')?.value || '').trim()
     };
 
-    console.log('Current hostname:', location.hostname);
-    console.log('Form data to send:', formData);
-    console.log('Message field value:', this.contactForm.get('message')?.value);
-
     try {
       const response = await this.contactService.sendMessage(formData);
       const successMessage = this.language() === 'en'
@@ -173,7 +169,6 @@ export class ContactComponent {
         : `Не вдалося надіслати повідомлення: ${errorMsg}`;
       this.submitMessage = errorMessage;
       this.toastService.error(errorMessage);
-      console.error('Error sending message:', error);
     } finally {
       this.isSubmitting = false;
     }
