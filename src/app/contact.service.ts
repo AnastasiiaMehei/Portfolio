@@ -10,7 +10,6 @@ export interface ContactMessage {
   providedIn: 'root'
 })
 export class ContactService {
-  // Use localhost for development, Render for production
   private readonly isDevelopment = location.hostname.includes('localhost') ||
                                    location.hostname.includes('127.0.0.1') ||
                                    location.hostname.includes('0.0.0.0') ||
