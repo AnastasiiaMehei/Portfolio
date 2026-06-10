@@ -12,6 +12,10 @@
   mask-size: 100% 100%;
 }
 
+.carousel-row {
+  overflow: hidden;
+}
+
 .carousel-track {
   display: flex;
   gap: 2rem;
@@ -19,6 +23,11 @@
   animation: carouselScroll 35s linear infinite;
   width: fit-content;
   will-change: transform;
+}
+
+.carousel-track.row-backward {
+  animation-direction: reverse;
+  animation-duration: 28s;
 }
 
 .carousel-track:hover {

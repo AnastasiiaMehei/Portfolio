@@ -39,22 +39,42 @@ const TECH_STACK = [
         </div>
 
         <div class="animated-card mx-auto max-w-5xl overflow-hidden rounded-[2rem] p-4 sm:p-4 mt-0">
-          <div class="carousel-wrapper">
-            <div class="carousel-track">
-              <ng-container *ngFor="let tech of carouselTechs()">
-                <div class="carousel-item">
-                  <div class="tech-icon-wrapper" [title]="tech.name">
-                    <img [src]="tech.icon" [alt]="tech.name" class="tech-icon" />
+          <div class="carousel-wrapper space-y-6">
+            <div class="carousel-row">
+              <div class="carousel-track row-forward">
+                <ng-container *ngFor="let tech of carouselTechsTop()">
+                  <div class="carousel-item">
+                    <div class="tech-icon-wrapper" [title]="tech.name">
+                      <img [src]="tech.icon" [alt]="tech.name" class="tech-icon" />
+                    </div>
                   </div>
-                </div>
-              </ng-container>
-              <ng-container *ngFor="let tech of carouselTechs()">
-                <div class="carousel-item">
-                  <div class="tech-icon-wrapper" [title]="tech.name">
-                    <img [src]="tech.icon" [alt]="tech.name" class="tech-icon" />
+                </ng-container>
+                <ng-container *ngFor="let tech of carouselTechsTop()">
+                  <div class="carousel-item">
+                    <div class="tech-icon-wrapper" [title]="tech.name">
+                      <img [src]="tech.icon" [alt]="tech.name" class="tech-icon" />
+                    </div>
                   </div>
-                </div>
-              </ng-container>
+                </ng-container>
+              </div>
+            </div>
+            <div class="carousel-row">
+              <div class="carousel-track row-backward">
+                <ng-container *ngFor="let tech of carouselTechsBottom()">
+                  <div class="carousel-item">
+                    <div class="tech-icon-wrapper" [title]="tech.name">
+                      <img [src]="tech.icon" [alt]="tech.name" class="tech-icon" />
+                    </div>
+                  </div>
+                </ng-container>
+                <ng-container *ngFor="let tech of carouselTechsBottom()">
+                  <div class="carousel-item">
+                    <div class="tech-icon-wrapper" [title]="tech.name">
+                      <img [src]="tech.icon" [alt]="tech.name" class="tech-icon" />
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
             </div>
           </div>
         </div>
@@ -67,5 +87,6 @@ export class AboutComponent {
   protected readonly language = this.languageService.language;
   protected readonly labels = this.languageService.labels;
 
-  protected readonly carouselTechs = () => TECH_STACK;
+  protected readonly carouselTechsTop = () => TECH_STACK.slice(0, 6);
+  protected readonly carouselTechsBottom = () => TECH_STACK.slice(6);
 }
