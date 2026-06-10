@@ -73,7 +73,7 @@ import { ToastService } from './toast.service';
         <aside class="visible animated-card">
           <div class="mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-black/10 p-8 shadow-xl shadow-black/10 sm:p-4">
             <div class="space-y-4">
-              <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <a href="https://github.com/AnastasiiaMehei" target="_blank" rel="noopener noreferrer" matTooltip="Visit GitHub" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/30 transition hover:bg-slate-800">
                   <img src="gitHub.png" alt="GitHub" class="w-10 h-10 mr-2" decoding="async" loading="lazy">
                   GitHub Profile
