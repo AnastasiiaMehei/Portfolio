@@ -86,14 +86,14 @@ import { ToastService } from './toast.service';
                   <img src="telegram.png" alt="Telegram" class="w-10 h-10 mr-2" decoding="async" loading="lazy">
                   Telegram
                 </a>
-                <a href="viber://chat?number=+380961914540" matTooltip="Open Viber" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-600/30 transition hover:bg-purple-500">
+                <!-- <a href="viber://chat?number=+380961914540" matTooltip="Open Viber" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-600/30 transition hover:bg-purple-500">
                   <img src="viber.png" alt="Viber" class="w-10 h-10 mr-2" decoding="async" loading="lazy">
                   Viber
                 </a>
                 <a href="https://wa.me/380961914540" target="_blank" rel="noopener noreferrer" matTooltip="Open WhatsApp" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-green-600/30 transition hover:bg-green-500">
                   <img src="whatsUpp.png" alt="WhatsApp" class="w-10 h-10 mr-2" decoding="async" loading="lazy">
                   WhatsApp
-                </a>
+                </a> -->
                 <a routerLink="/resume" matTooltip="View Resume" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-600/30 transition hover:bg-cyan-500">
                   <img src="resume.png" alt="Resume" class="w-10 h-10 mr-2" decoding="async" loading="lazy">
                   Resume
