@@ -15,7 +15,7 @@
       </a>
     </div>
 
-    <nav class="hidden flex-1 items-center gap-6 sm:flex sm:px-2">
+    <nav class="flex flex-wrap flex-1 items-center gap-6 sm:px-2">
       <a routerLink="/" routerLinkActive="header-link--active" [routerLinkActiveOptions]="{ exact: true }" matTooltip="Go to Home" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].home }}</a>
       <a routerLink="/projects" routerLinkActive="header-link--active" matTooltip="View Projects" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].projects }}</a>
       <a routerLink="/certifications" routerLinkActive="header-link--active" matTooltip="View Certifications" class="header-link inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition">{{ labels[language()].certifications }}</a>
@@ -47,7 +47,7 @@
   <router-outlet></router-outlet>
 </main>
 
-<button *ngIf="showScrollTop" type="button" (click)="scrollToTop()" matTooltip="Scroll to top" class="fixed bottom-6 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-cyan-600 text-white shadow-2xl shadow-cyan-500/20 transition hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+<button appPixiTrail [trailColor]="trailColor" [particleCount]="particleCount" [class.hidden]="!showScrollTop" type="button" (click)="scrollToTop()" matTooltip="Scroll to top" [class.scroll-btn-clicked]="scrollButtonScaled" class="scroll-btn fixed bottom-6 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-cyan-600 text-white shadow-2xl shadow-cyan-500/20 focus:outline-none focus:ring-2 focus:ring-cyan-300">
   <span class="text-2xl">↑</span>
 </button>
 
