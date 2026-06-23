@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import * as PIXI from 'pixi.js';
 
 interface Particle {
-  sprite: PIXI.Graphics;
+  sprite: any;
   vx: number;
   vy: number;
   life: number;
@@ -13,13 +12,18 @@ interface Particle {
   providedIn: 'root'
 })
 export class PixiEffectsService {
-  private app: PIXI.Application | null = null;
+  private app: any = null;
+  private pixi: any = null;
   private particles: Particle[] = [];
   private isRunning = false;
 
   async initApp(canvas: HTMLCanvasElement): Promise<void> {
     if (this.app) return;
+    if (!this.pixi) {
+      this.pixi = await import('pixi.js');
+    }
 
+    const PIXI = this.pixi;
     this.app = new PIXI.Application({
       canvas: canvas,
       width: canvas.clientWidth,
@@ -33,12 +37,14 @@ export class PixiEffectsService {
   }
 
   createTrailParticles(x: number, y: number, color: number = 0x06b6d4, count: number = 3): void {
-    if (!this.app) return;
+    if (!this.app || !this.pixi) return;
+
+    const PIXI = this.pixi;
 
     for (let i = 0; i < count; i++) {
       const angle = (Math.PI * 2 * i) / count;
       const speed = 1.5 + Math.random() * 1.5;
-      
+
       const circle = new PIXI.Graphics();
       circle.beginFill(color, 0.8);
       circle.drawCircle(0, 0, 3 + Math.random() * 2);
@@ -60,10 +66,10 @@ export class PixiEffectsService {
   }
 
   private startAnimationLoop(): void {
-    if (this.isRunning || !this.app) return;
+    if (this.isRunning || !this.app || !this.pixi) return;
     this.isRunning = true;
 
-    const ticker = new PIXI.Ticker();
+    const ticker = new this.pixi.Ticker();
     ticker.add(() => this.updateParticles());
     ticker.start();
   }
@@ -73,21 +79,13 @@ export class PixiEffectsService {
 
     for (let i = this.particles.length - 1; i >= 0; i--) {
       const particle = this.particles[i];
-      
-      // Update position
+
       particle.sprite.position.x += particle.vx;
       particle.sprite.position.y += particle.vy;
-
-      // Apply gravity
       particle.vy += 0.05;
-
-      // Update life
       particle.life -= 0.02;
-
-      // Update opacity based on life
       particle.sprite.alpha = particle.life;
 
-      // Remove dead particles
       if (particle.life <= 0) {
         this.app.stage.removeChild(particle.sprite);
         particle.sprite.destroy();
